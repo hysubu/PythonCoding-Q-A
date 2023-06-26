@@ -51,3 +51,40 @@ print(l)
 
 
 
+#4. Find Factorial A Any Number >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+def factorial(n):
+    factor = 1
+    for i in range(1,n):
+        factor *= i
+    print(factor)
+factorial(10)
+
+
+#5 Write a prigramme to find >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+#Output >>>>>>>>>>
+
+AAA
+BBB
+CCC
+
+for i in range(4):
+    print(chr(64+i)*3)
+
+
+
+
+#6 Write A programe To find the answer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+#Output : eno owt eerht ruof evif xis
+
+n = ("one two three four five six")
+n = n.split()
+rev = ""
+for i in n :
+    print(i)
+    rev = rev + i[::-1] +" "
+print(rev)
+
+
+
