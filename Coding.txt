@@ -1,5 +1,6 @@
 
-#1. Check Prime number or not 
+#1.Check Prime number or not>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 
 
 def primenumber(k):
     p = []
@@ -19,7 +20,7 @@ print(primenumber(k))
 
 
 
-#2. Palindrom Number
+#2.Palindrom Number>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 def palindromnumber(n):
@@ -31,3 +32,22 @@ def palindromnumber(n):
         n = n // 10
     print(emp)
 palindromnumber(123)
+
+
+
+
+
+#3 Sort a list without Sort Method>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ 
+
+lis = [23,2,5 ,1,67, 7]
+for i in range(len(lis)) :
+    for j in range(len(lis)) :
+        if l[i] < l[j] :
+            l[i], l[j] = l[j],l[i]
+print(l)
+
+
+
+
+
