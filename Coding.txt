@@ -88,3 +88,54 @@ print(rev)
 
 
 
+
+#7. Write a program To find the answer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ i / p = A6BC4D5
+ O / P = ABCD456
+
+n = "A6BC4D5"
+alph = ""
+s = sorted(n)
+dig = ""
+for i in s :
+    if i.isalpha():
+        alph = alph + i
+    else:
+        dig = dig + i
+print(alph+dig)
+
+
+#8. Write a prigramme to find the answer >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+i/p  =  aaaabbbccd
+o /p =  4a3b2c1d
+
+n = "aaaabbbcc"
+emp = ""
+for i in n :
+    c = n.count(i)
+    if i not in emp :
+        emp = emp + str(c)+ i
+        del i
+print(emp) 
+
+
+#9. Write a programme to find  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+# i/p = a4k3b2
+# o/p = aeknbd 
+
+n = "a4k3b2"
+emp = ""
+for i in n :
+    if i.isalpha():
+        ch = (i)
+    else:
+        emp = emp + ch + chr((ord(ch)+int(i)))
+print(emp)
+
+
+
+
+#10.
+
+
+
