@@ -34,19 +34,14 @@ def palindromnumber(n):
 palindromnumber(123)
 
 
-
-
-
 #3 Sort a list without Sort Method>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
  
-
 lis = [23,2,5 ,1,67, 7]
 for i in range(len(lis)) :
     for j in range(len(lis)) :
         if l[i] < l[j] :
             l[i], l[j] = l[j],l[i]
 print(l)
-
 
 
 
@@ -85,7 +80,6 @@ for i in n :
     print(i)
     rev = rev + i[::-1] +" "
 print(rev)
-
 
 
 
@@ -133,9 +127,80 @@ for i in n :
 print(emp)
 
 
+#10. How Middleware work  Explain ?
+
+MIDDLEWARE = [
+
+'middleware.Testmiddlewarel',
+'middleware. Testmiddleware2',
+'middleware.Testmiddleware3'
+]
+
+class BaseTestMiddleware:
+    def _init_(self, get_response)
+        self.get_response = get_response
+
+    def __call__ (self, request):
+        print('Start', self.middleware_name)
+        response = self.get_response(request)
+        print('End, self.middleware_name)
+
+class Testmiddlewarel (BaseTestMiddleware):
+
+    middleware_name = 'First Middleware!
+
+class Testmiddleware2 (BaseTestMiddleware):
+
+    middleware_name = 'Second Kiddleware!
+
+class Testmiddleware3 (BaseTestMiddleware):
+
+    middleware_name = 'Third Middleware
 
 
-#10.
+-> Solution :
+
+
+In the provided code, we have a base middleware class called BaseTestMiddleware with a call method and a derived class Testmiddlewarel, Testmiddleware2, and Testmiddleware3, each defining a middleware_name attribute.
+
+Let's break down how the request and response flow would work based on the given code:
+
+When a request hits the Django server, the request is initially passed to the first middleware in the MIDDLEWARE setting (in this case, Testmiddlewarel).
+
+The call method of Testmiddlewarel is executed. It prints Start First Middleware! since middleware_name is set to 'First Middleware!'.
+
+The self.get_response(request) line invokes the next middleware in the chain or the view function if it is the last middleware. It passes the request to the next middleware, Testmiddleware2.
+
+The call method of Testmiddleware2 is executed. It prints Start Second Middleware! since middleware_name is set to 'Second Middleware!'.
+
+Similarly, the self.get_response(request) line passes the request to the next middleware, Testmiddleware3.
+
+The call method of Testmiddleware3 is executed. It prints Start Third Middleware! since middleware_name is set to 'Third Middleware!'.
+
+Now, the request reaches the view function or the last middleware if there are no more middlewares in the MIDDLEWARE setting.
+
+The view function processes the request and generates a response.
+
+The response is then passed back through the middleware chain in the reverse order.
+
+The self.get_response(request) line in Testmiddleware3 returns the response to Testmiddleware3.
+
+The print statement End Third Middleware! is executed, indicating that the execution of Testmiddleware3 has ended.
+
+Similarly, the response is passed back to Testmiddleware2, where the print statement End Second Middleware! is executed.
+
+Finally, the response reaches Testmiddlewarel, where the print statement End First Middleware! is executed.
+
+The response is then returned to the client.
+
+In summary, the middleware classes intercept the request and response as it flows through the Django server. 
+Each middleware class can perform operations before and after passing the request to the next middleware in the chain.
+ The derived classes Testmiddlewarel, Testmiddleware2, and Testmiddleware3 add their own custom behavior by defining the middleware_name attribute.
+
+Please note that in your code, the __init__ method of BaseTestMiddleware has a typo (_init_ instead of __init__).
+ It should be corrected to ensure proper initialization of the base middleware class.
+
+
 
 
 
